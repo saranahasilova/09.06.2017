@@ -1,0 +1,113 @@
+  Proqramlasdirma paradigmasi
+ Programlaçdirma dili icra edilenproqramlarsn inkisafi üçün bir al?tdir.Ümumilikd? proqramlasdirma paradigmasi proqramlasdirma dilinin qurulusuna t?sir edir. Proramlasdirma paradigmasi qavranilmamis istifad?çi v? izah edilm?mis mür?kk?b probleml?rin mü?yy?nl?sdir?n bir gövd?dir.Proqramlasdirma paradigmasinin 4 növü vardir.
+ 1.Imperativ paradigma-bu paradigma kompüterin hesablama prosesind? ist?nil?n d?yisikliyin d?yis?nl?r vasit?sil? saxlaya bildiyini n?z?rd? tutur.Hesablamalar idar? olunan addimlar ardicilligi vasit?sil? yerin? yetirilir,hansi ki, bu d?yis?nl?rd? olanlar yöneldilir ve ya deyisdirilir.
+?mrler ardicilligi vacibdir çünki, verilen addim addim icra edilende cari deyisenlerin qiymetlerinden asili olaraq müxtelif neticelere malik olacaq.M?shur proqramalsdirma dilleri imperativdir.Onlarin bele m?shur olmasina 2 s?b?b vardir.Birincisi imperativ paradigma faktiki masinin  özün? çox oxsayir proqramist masina daha çox yaxindir.buna gör? d? imperativ paradigma son vaxtlara q?d?r genis s?kild? istifad? edilirdi.
+Imperativ paradigma asagidakilarla xarakterize olunur:
+a)Prosedurlar
+b)Funksiyalar
+c)Abstrakt verilenler tipi
+ result = []
+    i = 0
+start:
+    numPeople = length(people)
+    if i >= numPeople goto finished
+    p = people[i]
+    nameLength = length(p.name)
+    if nameLength <= 5 goto nextOne
+    upperName = toUpper(p.name)
+    addToList(result, upperName)
+nextOne:
+    i = i + 1
+    goto start
+finished:
+    return sort(result)
+ 2.M?ntiqi paradigmaproblemin h?llin? n?qli yanasir.Bir situasiya haqqinda haqqinda m?ntiqi iddialar düz?ldilir.Kompüterin rolu veril?n m?ntiqi deduksiyalari saxlamaga çevrilir.
+M?ntiqi paradigma 3 bölm?y? bölünür:
+a) probleml?r domeynin? t?rif ver?n n?qli t?rifl?r ardicilligi
+b) müvafiq faktlarin hesablanmasi
+c) sorgu n?tic?sind? n?tic? ?ld? olunmasi
+M?ntiq yönümlü proqramlasdirma birqatdir-sistem problemi h?ll edir bel? ki, proqramlasdirma addimlari özl?rini minimuma saxlayir v? ist?nil?n proqramin etibarliligi sad?dir.
+Mentiqi paradigma asagidakilarla xarakterize olunur:
+a)Aksiomlar
+b)Faktlar
+c)Netice çixarma qaydalari
+d)Sorgular
+
+domains
+being = symbol
+predicates
+animal(being) % all animals are beings
+dog(being) % all dogs are beings
+die(being) % all beings die
+clauses
+animal(X) :- dog(X) % all dogs are animals
+dog(fido). % fido is a dog
+die(X) :- animal(X) % all animals die
+  3. Funksional paradigma-bu pardigmada bütün alt proqramlar riyazi menada mülahize edilir onlarin arqumentleri götürülür ve hell seklikde qaytarilir.Hesablama modeli tetbiq ve azalma funkiyalarindan biridir.Finksional diller funksional paradigma esasinda yaradilir.Bele diller icaze verilmis proqramist terefinden funksiyalari emal etmeye birinci sinif obyekt kimi icaz verir. 
+Funksional paradigma asagidakilarla xarakterize olunur:
+a) Tek tapsiriq
+b)qarsiliqli s?ffafliq
+c)Terkibilik
+d)Ali meqsedli funksiya
+Function for computing the average of two numbers:
+
+(defun avg(X Y) (/ (+ X Y) 2.0))
+
+Function is called by:
+
+> (avg 10.0 20.0)
+
+Function returns:
+
+15.0
+4.Obyekt yönümlü paradigma.Bu paradigmada real dünya obyektleri her biri sadece metod kimi adlanan.prosedurlar quran öz v?ziyy?tine malik ayri sexs kimi görülür.Obyektler asili olmadan fealiiy?t gösterirler.Onlar modullara kapsullanir hansi ki h?m lokal mühitlerden hem de metodlardan ibaretdir.Obyektler arasindaki elaqe mesaj vasitesile yerine yetirilir.Obyektler siniflerden teskil olunur hansindan ki onlar metodlari ve ekvivalent deyisenleri miras alir.Obyekt yönümlü paradigma yeniden istifade oluna bilen  kodun esas üstünlüyünü ve kod elastikliyini temin ediir.Obyekt yönümlü olmaq üçün dil mirasla, kapsullama ve dinamik rabitelenme ile elaqelenmelidir. 
+Obyekt yönümlü pardigmanin esas xarakteristikalri asagidakilardir:
+a)Verilenlerin abstraksiyasi
+b)Kapsullama
+c)Polymorfizm
+d)Miras almaq
+Class:
+
+class data
+{
+public:
+Date(int mn, int dy, int yr); //Constructor
+void display();	//Function to print data
+~Date();	//Destructor
+Private:
+int month, day, year; //Private data members
+};
+
+Inheritance:
+
+class Employee
+{
+public:
+Employee();
+const char *getName() const;
+private:
+char name[30];
+};
+
+class WageEmployee : public Employee
+{
+public:
+WageEmployee(const char *nm);
+void setWage(double wg);
+void setHours(double hrs);
+private:
+double:wage;
+double:hours;
+};
+WageEmployee aWorker("Bill Gates");
+const char *str;
+
+aWorker.setHours(40.0); //call WageEmployee::setHours
+str = aWorker.getName(); //call Employee::getname
+5.Class-verilenlerin ve deyisenlerin yerine yetirilmesidir ve verilenleri ve metodlari kapsullayir.Sinif mü?yy?n qrup verilenler üçün ümumi olan deyisenlerin ve metodlarin bir protitipidir.Obyekt sinifden real vaxt mesafesinde isleyir.Sinifler sadece orada yerlesir bütün real isleri obyektler görür ve yaddas obyektleri yadda saxlayir sinifleri yox.
+6.Obyekt-real dünya heyatinda qarsilasdigimiz seylerin bir modelidir.
+7.Encapsulation.Kapsullama metodu obyekt deyisenlerini qorumaq üçün verilenlerin qablasdirilmasidir.Obyekt öz deyisenlerini istese ifsa eder ve ya istese metodlarini gizlede biler.
+8.Inheritance.Bir sinif yerini ve davranislarini özünün yuxari siniflerinden alir.Miras alma proqram teminatinin teskili ve qurulusu üçün güclü ve tebii mexanizmleri temin edir.
+9.Polymorfizm-Bir neç? halda bas ver?n v?ziyy?tdir.
+10.Data abstraction-verilenlerin mücerredliyidir.
+ 
